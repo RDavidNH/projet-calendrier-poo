@@ -14,8 +14,10 @@ class User
     return @@all_users.length
   end
   
-  def find_by_email(email)
-  
+  def self.find_by_email(email)
+    @@all_users.each do |user|
+      return user if user.email == email
+    end
   end
   
 end
